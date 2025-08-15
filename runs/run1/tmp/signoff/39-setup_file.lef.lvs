@@ -1,0 +1,1 @@
+lvs {/openlane/designs/addsub4/runs/run1/results/signoff/addsub4_top.spice addsub4_top} {/openlane/designs/addsub4/runs/run1/tmp/signoff/36-addsub4_top.pnl.v addsub4_top} /home/abhishek/OpenLane/pdk_new/sky130A/libs.tech/netgen/sky130A_setup.tcl /openlane/designs/addsub4/runs/run1/logs/signoff/39-addsub4_top.lef.lvs.log -json

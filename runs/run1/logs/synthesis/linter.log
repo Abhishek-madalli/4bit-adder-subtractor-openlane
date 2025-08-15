@@ -1,0 +1,6 @@
+%Warning-WIDTHEXPAND: /openlane/designs/addsub4/src/addsub4_top.v:37:47: Operator ADD expects 5 bits on the RHS, but RHS's VARREF 'sub_r' generates 1 bits.
+                                                                       : ... In instance addsub4_top
+   37 |     wire [4:0] sum = {1'b0, a_r} + {1'b0, b2} + sub_r;  
+      |                                               ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.009
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
