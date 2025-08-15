@@ -1,0 +1,9 @@
+# Generated/openlane files
+runs/
+pdks/
+logs/
+tmp/
+# Editor/system files
+*.swp
+*.DS_Store
+__pycache__/
