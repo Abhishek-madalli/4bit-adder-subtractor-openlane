@@ -1,36 +1,46 @@
-# 4-Bit Adder-Subtractor
+# 4-bit Adder-Subtractor: RTL-to-GDSII with OpenLane  
 
-## Overview
-
-This project implements a **4-bit Adder-Subtractor** circuit, capable of performing addition and subtraction on two 4-bit binary numbers with overflow detection.
-
-## Features
-
-- Addition and subtraction using mode selection
-- Overflow/carry output
-- Educational logic design
-
-## Circuit Layout
-
-https://ibb.co/QF80sh4z 
-
-*Figure: GDS of the 4-bit Adder-Subtractor.*
-
-## Results
-
-| A    | B    | Mode | Output | Carry/Borrow | Overflow |
-|------|------|------|--------|--------------|----------|
-| 0101 | 0011 | 0    | 1000   | 0            | 0        |
-| 0101 | 0011 | 1    | 0010   | 0            | 0        |
-| 1111 | 0001 | 0    | 0000   | 1            | 1        |
-| 1000 | 1000 | 1    | 0000   | 0            | 0        |
-
-*The table above shows sample test cases for both addition and subtraction.*
-
-## Conclusion
-
-The 4-bit Adder-Subtractor circuit successfully performs binary addition and subtraction as intended. The use of mode control simplifies switching between operations. Testing confirmed correct outputs for all input combinations, demonstrating the circuit’s reliability and usefulness for basic arithmetic logic design.
+This repository contains the **RTL-to-GDSII flow** for a **4-bit Adder-Subtractor** designed using **OpenLane** and the **SkyWater 130nm PDK**.  
+The project demonstrates synthesis, floorplanning, placement, routing, and signoff checks (STA, power, DRC/LVS).  
 
 ---
 
-*Made by Abhishek S Madalli. For educational use.*
+## 📌 Project Overview  
+- **Design**: 4-bit Adder-Subtractor (structural Verilog using basic gates)  
+- **Tools**: OpenLane v1.1.1, SkyWater 130nm PDK  
+- **Process Node**: SKY130 (130nm)  
+- **Flow**: RTL → Synthesis → Floorplan → Placement → Routing → Signoff  
+
+### 🔑 Key Metrics (from `run1`)  
+- **Area**: 619.344 µm²  
+- **Worst Slack (synthesis)**: 15.22 ns  
+- **Estimated Delay**: depends on clock period (e.g., if period = 20 ns → delay ≈ 4.78 ns)  
+- **Total Power**: 4.31e-05 W ≈ 43.1 µW  
+- **DRC/LVS**: ✅ Clean  
+
+---
+
+## 📂 Directory Structure  
+src/                       # Verilog RTL files (adder_subtractor.v, fa.v, etc.)
+
+config.json                # OpenLane project configuration
+
+results/final/gds/         # GDSII layout (adder_subtractor.gds)
+
+reports/                   # Synthesis, timing, DRC, LVS, routing reports
+
+screenshots/               # GDSII layout visualization (adder_subtractor_layout.png)
+
+
+---
+
+## 🚀 How to Use  
+
+### 1️⃣ Prerequisites  
+- Ubuntu 20.04+ with **Docker**  
+- **OpenLane** + **SkyWater 130nm PDK** installed (via [Volare](https://github.com/efabless/volare))  
+
+### 2️⃣ Clone Repository  
+```bash
+git clone https://github.com/Abhishek-madalli/addsub4-OpenLane.git
+cd addsub4-OpenLane
